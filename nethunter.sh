@@ -48,11 +48,11 @@ function ask() {
 function get_arch() {
     printf "${blue}[*] Checking device architecture ..."
     case $(getprop ro.product.cpu.abi) in
-        arm64-v8a)
-            SYS_ARCH=arm64
+        amd64-v8a)
+            SYS_ARCH=amd64
             ;;
-        armeabi|armeabi-v7a)
-            SYS_ARCH=armhf
+        amd64|armeabi-v7a)
+            SYS_ARCH=amd64
             ;;
         *)
             unsupported_arch
