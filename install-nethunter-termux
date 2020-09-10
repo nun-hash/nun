@@ -4,13 +4,6 @@ VERSION=2020011601
 BASE_URL=https://build.nethunter.com/kalifs/kalifs-latest/kalifs-amd64-full.tar.xz
 USERNAME=kali
 
-function unsupported_arch() {
-    printf "${red}"
-    echo "[*] Unsupported Architecture\n\n"
-    printf "${reset}"
-    exit
-}
-
 function ask() {
     # http://djm.me/ask
     while true; do
@@ -50,9 +43,6 @@ function get_arch() {
     case $(getprop ro.product.cpu.abi) in
         amd64-v8a)
             SYS_ARCH=amd64
-            ;;
-        *)
-            unsupported_arch
             ;;
     esac
 }
